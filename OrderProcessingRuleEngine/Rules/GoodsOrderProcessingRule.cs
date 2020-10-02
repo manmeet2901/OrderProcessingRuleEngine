@@ -1,9 +1,10 @@
 ﻿using OrderProcessingRuleEngine.Models;
+using System;
 using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine.Rules
 {
-    // abstract rule for physical product
+    // rule for physical product
     public abstract class GoodsOrderProcessingRule : IOrderProcessingRule
     {
         public abstract string RuleName { get; set; }
@@ -18,6 +19,13 @@ namespace OrderProcessingRuleEngine.Rules
             return "Generated packing slip for shipping.";
         }
 
-        public abstract List<RuleResult> Process(Order order);
+        public virtual List<RuleResult> Process(Order order)
+        {
+            GeneratePackingSlipForShipping();
+
+            GenerateCommissionPaymentForAgent();
+
+            throw new NotImplementedException();
+        }
     }
 }

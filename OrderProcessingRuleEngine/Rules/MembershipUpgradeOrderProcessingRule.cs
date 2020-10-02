@@ -3,21 +3,20 @@ using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine.Rules
 {
-    // rule for a book
-    public class BookOrderProcessingRule : GoodsOrderProcessingRule
+    public class MembershipUpgradeOrderProcessingRule : MembershipOrderProcessingRule
     {
         public override string RuleName { get; set; }
 
-        protected string CreateDuplicatePackingSlipForRoyaltyDepartment()
+        private string UpgradeMembership()
         {
-            return "Created duplicate packing slip for the royalty department.";
+            return "Membership upgraded";
         }
 
         public override List<RuleResult> Process(Order order)
         {
-            base.Process(order);
+            UpgradeMembership();
 
-            CreateDuplicatePackingSlipForRoyaltyDepartment();
+            EmailOwner();
 
             throw new System.NotImplementedException();
         }
