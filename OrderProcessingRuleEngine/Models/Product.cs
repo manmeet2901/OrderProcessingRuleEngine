@@ -1,4 +1,6 @@
-﻿namespace OrderProcessingRuleEngine.Models
+﻿using System.Collections.Generic;
+
+namespace OrderProcessingRuleEngine.Models
 {
     public class Product
     {
@@ -8,6 +10,8 @@
         public decimal Quantity { get; set; }
         public decimal Price { get; set; }
         public string UOM { get; set; }
+        //We're in the endgame now
+        public List<string> ProductRules { get; set; }
     }
 
     public enum ProductType

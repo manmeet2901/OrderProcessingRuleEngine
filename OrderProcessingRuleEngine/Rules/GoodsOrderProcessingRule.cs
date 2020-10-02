@@ -1,15 +1,23 @@
 ﻿using OrderProcessingRuleEngine.Models;
+using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine.Rules
 {
-    // rule for physical product
+    // abstract rule for physical product
     public abstract class GoodsOrderProcessingRule : IOrderProcessingRule
     {
         public abstract string RuleName { get; set; }
-        protected string GeneratePackingSlip()
+
+        protected string GenerateCommissionPaymentForAgent()
         {
-            return "Generated a packing slip for shipping.";
+            return "Generated commission payment to the agent";
         }
-        public abstract void Process(Order order);
+
+        protected string GeneratePackingSlipForShipping()
+        {
+            return "Generated packing slip for shipping.";
+        }
+
+        public abstract List<RuleResult> Process(Order order);
     }
 }
