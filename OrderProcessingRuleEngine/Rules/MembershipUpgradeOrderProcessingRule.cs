@@ -5,6 +5,11 @@ namespace OrderProcessingRuleEngine.Rules
 {
     public class MembershipUpgradeOrderProcessingRule : MembershipOrderProcessingRule
     {
+        public MembershipUpgradeOrderProcessingRule(string ruleName) : base(ruleName)
+        {
+
+        }
+
         private string UpgradeMembership()
         {
             return "Membership upgraded";

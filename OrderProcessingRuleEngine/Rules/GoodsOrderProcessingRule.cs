@@ -9,6 +9,11 @@ namespace OrderProcessingRuleEngine.Rules
     {
         public string RuleName { get; set; }
 
+        public GoodsOrderProcessingRule(string ruleName)
+        {
+            RuleName = ruleName;
+        }
+
         protected string GenerateCommissionPaymentForAgent()
         {
             return "Generated commission payment to the agent";

@@ -7,6 +7,11 @@ namespace OrderProcessingRuleEngine.Rules
     {
         public string RuleName { get; set; }
 
+        public MembershipOrderProcessingRule(string ruleName)
+        {
+            RuleName = ruleName;
+        }
+
         private string ActivateMembership()
         {
             return "Membership activated";

@@ -7,6 +7,11 @@ namespace OrderProcessingRuleEngine.Rules
     // rule for the video "Learning to Ski,"
     public class LearningToSkiVideoOrderProcessingRule : GoodsOrderProcessingRule
     {
+        public LearningToSkiVideoOrderProcessingRule(string ruleName): base(ruleName)
+        {
+
+        }
+
         private string AddFreeFirstAidVideoToPackingSlip()
         {
             return "Added free 'First Aid' video to the packing slip";

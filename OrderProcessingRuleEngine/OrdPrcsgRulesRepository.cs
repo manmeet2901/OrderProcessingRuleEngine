@@ -20,11 +20,11 @@ namespace OrderProcessingRuleEngine
             // add more rules here
             return new Dictionary<string, IOrderProcessingRule>()
             {
-                { "PHYS_PROD", new GoodsOrderProcessingRule() },
-                { "BOOK", new BookOrderProcessingRule() },
-                { "MEM_ACT", new MembershipOrderProcessingRule() },
-                { "MEM_UPG", new MembershipUpgradeOrderProcessingRule() },
-                { "VIDLEARNTOSKI", new LearningToSkiVideoOrderProcessingRule()}
+                { "PHYS_PROD", new GoodsOrderProcessingRule("PHYS_PROD") },
+                { "BOOK", new BookOrderProcessingRule("BOOK") },
+                { "MEM_ACT", new MembershipOrderProcessingRule("MEM_ACT") },
+                { "MEM_UPG", new MembershipUpgradeOrderProcessingRule("MEM_UPG") },
+                { "VIDLEARNTOSKI", new LearningToSkiVideoOrderProcessingRule("VIDLEARNTOSKI")}
             };
         }
     }
