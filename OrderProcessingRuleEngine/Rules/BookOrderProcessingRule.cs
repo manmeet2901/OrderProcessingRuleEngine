@@ -6,8 +6,6 @@ namespace OrderProcessingRuleEngine.Rules
     // rule for a book
     public class BookOrderProcessingRule : GoodsOrderProcessingRule
     {
-        public override string RuleName { get; set; }
-
         protected string CreateDuplicatePackingSlipForRoyaltyDepartment()
         {
             return "Created duplicate packing slip for the royalty department.";

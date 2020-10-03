@@ -5,9 +5,9 @@ using System.Collections.Generic;
 namespace OrderProcessingRuleEngine.Rules
 {
     // rule for physical product
-    public abstract class GoodsOrderProcessingRule : IOrderProcessingRule
+    public class GoodsOrderProcessingRule : IOrderProcessingRule
     {
-        public abstract string RuleName { get; set; }
+        public string RuleName { get; set; }
 
         protected string GenerateCommissionPaymentForAgent()
         {

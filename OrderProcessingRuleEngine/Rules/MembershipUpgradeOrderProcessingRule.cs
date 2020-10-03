@@ -5,8 +5,6 @@ namespace OrderProcessingRuleEngine.Rules
 {
     public class MembershipUpgradeOrderProcessingRule : MembershipOrderProcessingRule
     {
-        public override string RuleName { get; set; }
-
         private string UpgradeMembership()
         {
             return "Membership upgraded";

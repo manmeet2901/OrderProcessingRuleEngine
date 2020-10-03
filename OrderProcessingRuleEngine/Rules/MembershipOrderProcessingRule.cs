@@ -3,9 +3,9 @@ using OrderProcessingRuleEngine.Models;
 
 namespace OrderProcessingRuleEngine.Rules
 {
-    public abstract class MembershipOrderProcessingRule : IOrderProcessingRule
+    public class MembershipOrderProcessingRule : IOrderProcessingRule
     {
-        public abstract string RuleName { get; set; }
+        public string RuleName { get; set; }
 
         private string ActivateMembership()
         {
