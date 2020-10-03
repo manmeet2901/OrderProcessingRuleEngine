@@ -1,4 +1,5 @@
-﻿using OrderProcessingRuleEngine.Rules;
+﻿using OrderProcessingRuleEngine.Models;
+using OrderProcessingRuleEngine.Rules;
 using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine
@@ -10,9 +11,14 @@ namespace OrderProcessingRuleEngine
             throw new System.NotImplementedException();
         }
 
-        public void RunRules(List<IOrderProcessingRule> rules)
+        public List<RuleResult> RunRules(List<IOrderProcessingRule> rules, Order order)
         {
-            throw new System.NotImplementedException();
+            List<RuleResult> results = new List<RuleResult>();
+
+            foreach (IOrderProcessingRule rule in rules)
+                results.AddRange(rule.Process(order));
+
+            return results;
         }
 
         private Dictionary<string, IOrderProcessingRule> GetAllRules()

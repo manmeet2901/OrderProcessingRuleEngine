@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using OrderProcessingRuleEngine.Models;
+using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine
 {
     public interface IOrdPrcsgRulesRepository
     {
         List<IOrderProcessingRule> GetRules(List<string> ruleNames);
-        void RunRules(List<IOrderProcessingRule> rules);
+        List<RuleResult> RunRules(List<IOrderProcessingRule> rules, Order order);
     }
 }
