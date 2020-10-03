@@ -12,7 +12,7 @@ namespace OrderProcessingRuleEngine
 
             foreach(string ruleName in ruleNames)
             {
-                bool hasRule = GetAllRules().TryGetValue("ruleName", out IOrderProcessingRule rule);
+                bool hasRule = GetAllRules().TryGetValue(ruleName, out IOrderProcessingRule rule);
 
                 if (hasRule)
                     rules.Add(rule);

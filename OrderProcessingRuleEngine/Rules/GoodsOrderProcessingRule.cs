@@ -15,7 +15,7 @@ namespace OrderProcessingRuleEngine.Rules
 
         protected string GenerateCommissionPaymentForAgent()
         {
-            return "Generated commission payment to the agent";
+            return "Generated commission payment to the agent.";
         }
 
         protected string GeneratePackingSlipForShipping()
