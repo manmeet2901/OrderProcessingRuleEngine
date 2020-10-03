@@ -13,7 +13,7 @@ namespace OrderProcessingRuleEngine.Rules
 
         private string AddFreeFirstAidVideoToPackingSlip()
         {
-            return "Added free 'First Aid' video to the packing slip";
+            return "Added free 'First Aid' video to the packing slip.";
         }
 
         public override List<RuleResult> Process(Order order)

@@ -12,7 +12,7 @@ namespace OrderProcessingRuleEngine.Rules
 
         private string UpgradeMembership()
         {
-            return "Membership upgraded";
+            return "Membership upgraded.";
         }
 
         public override List<RuleResult> Process(Order order)

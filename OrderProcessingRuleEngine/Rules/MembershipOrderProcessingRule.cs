@@ -14,12 +14,12 @@ namespace OrderProcessingRuleEngine.Rules
 
         private string ActivateMembership()
         {
-            return "Membership activated";
+            return "Membership activated.";
         }
 
         protected string EmailOwner()
         {
-            return "E-mailed owner of the activation/upgrade";
+            return "E-mailed owner of the activation/upgrade.";
         }
 
         public virtual List<RuleResult> Process(Order order)
