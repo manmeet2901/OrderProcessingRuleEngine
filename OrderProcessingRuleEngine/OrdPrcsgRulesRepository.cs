@@ -8,7 +8,17 @@ namespace OrderProcessingRuleEngine
     {
         public List<IOrderProcessingRule> GetRules(List<string> ruleNames)
         {
-            throw new System.NotImplementedException();
+            List<IOrderProcessingRule> rules = new List<IOrderProcessingRule>();
+
+            foreach(string ruleName in ruleNames)
+            {
+                bool hasRule = GetAllRules().TryGetValue("ruleName", out IOrderProcessingRule rule);
+
+                if (hasRule)
+                    rules.Add(rule);
+            }
+
+            return rules;
         }
 
         public List<RuleResult> RunRules(List<IOrderProcessingRule> rules, Order order)
