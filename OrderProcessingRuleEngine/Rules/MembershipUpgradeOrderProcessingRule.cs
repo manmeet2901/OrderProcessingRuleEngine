@@ -17,11 +17,11 @@ namespace OrderProcessingRuleEngine.Rules
 
         public override List<RuleResult> Process(Order order)
         {
-            UpgradeMembership();
-
-            EmailOwner();
-
-            throw new System.NotImplementedException();
+            return new List<RuleResult>
+            {
+               RuleResult.GetInstance(RuleName, UpgradeMembership()),
+               RuleResult.GetInstance(RuleName, EmailOwner())
+            };
         }
     }
 }

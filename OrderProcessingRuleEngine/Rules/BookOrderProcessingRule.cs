@@ -18,11 +18,11 @@ namespace OrderProcessingRuleEngine.Rules
 
         public override List<RuleResult> Process(Order order)
         {
-            base.Process(order);
+            List<RuleResult> results = base.Process(order);
 
-            CreateDuplicatePackingSlipForRoyaltyDepartment();
+            results.Add(RuleResult.GetInstance(RuleName, CreateDuplicatePackingSlipForRoyaltyDepartment()));
 
-            throw new System.NotImplementedException();
+            return results;
         }
     }
 }

@@ -24,11 +24,11 @@ namespace OrderProcessingRuleEngine.Rules
 
         public virtual List<RuleResult> Process(Order order)
         {
-            ActivateMembership();
-
-            EmailOwner();
-
-            throw new System.NotImplementedException();
+            return new List<RuleResult>
+            {
+                RuleResult.GetInstance(RuleName, ActivateMembership()),
+                RuleResult.GetInstance(RuleName, EmailOwner())
+            };
         }
     }
 }

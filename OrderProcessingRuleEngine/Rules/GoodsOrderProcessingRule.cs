@@ -1,5 +1,4 @@
 ﻿using OrderProcessingRuleEngine.Models;
-using System;
 using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine.Rules
@@ -26,11 +25,11 @@ namespace OrderProcessingRuleEngine.Rules
 
         public virtual List<RuleResult> Process(Order order)
         {
-            GeneratePackingSlipForShipping();
-
-            GenerateCommissionPaymentForAgent();
-
-            throw new NotImplementedException();
+            return new List<RuleResult>
+            {
+                RuleResult.GetInstance(RuleName, GeneratePackingSlipForShipping()),
+                RuleResult.GetInstance(RuleName, GenerateCommissionPaymentForAgent())
+            };
         }
     }
 }

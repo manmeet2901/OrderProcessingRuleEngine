@@ -1,5 +1,4 @@
 ﻿using OrderProcessingRuleEngine.Models;
-using System;
 using System.Collections.Generic;
 
 namespace OrderProcessingRuleEngine.Rules
@@ -19,11 +18,11 @@ namespace OrderProcessingRuleEngine.Rules
 
         public override List<RuleResult> Process(Order order)
         {
-            base.Process(order);
+            List<RuleResult> results = base.Process(order);
 
-            AddFreeFirstAidVideoToPackingSlip();
+            results.Add(RuleResult.GetInstance(RuleName, AddFreeFirstAidVideoToPackingSlip()));
 
-            throw new NotImplementedException();
+            return results;
         }
     }
 }
